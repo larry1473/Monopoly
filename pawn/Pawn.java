@@ -2,7 +2,9 @@ package pawn;
 
 import board.Board;
 import board.Tile;
-
+/**
+ * @author Larry Fotso
+ */
 public class Pawn {
 
     Position loc;

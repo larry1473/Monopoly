@@ -2,7 +2,9 @@ package board;
 
 import java.util.ArrayList;
 //import java.util.HashMap;
-
+/**
+ * @author Larry Fotso
+ */
 public class Utility {
 
 

@@ -1,7 +1,9 @@
 
 import board.Board;
 import gui.Graphical;
-
+/**
+ * @author Larry Fotso
+ */
 public class Main{
 
     public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package pawn;
-
+/**
+ * @author Larry Fotso
+ */
 public class Position {
 
     private int x ;

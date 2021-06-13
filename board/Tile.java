@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import pawn.Pawn;
 import pawn.Position;
-
+/**
+ * @author Larry Fotso
+ */
 public class Tile {
 
     protected String name;

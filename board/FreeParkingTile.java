@@ -1,7 +1,9 @@
 package board;
 import pawn.Pawn;
 import pawn.Position;
-
+/**
+ * @author Larry Fotso
+ */
 public class FreeParkingTile extends Tile {
 
     public final static  int COST = 0;
