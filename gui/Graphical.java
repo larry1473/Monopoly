@@ -33,6 +33,8 @@ public class Graphical extends JFrame {
     public Graphical() {
 
         this.b = Board.getInstance();
+        this.board = b.getBoard();
+        System.out.print(b);
         this.setTitle("MONOPOLY");
         c = new GridBagConstraints();
         this.setLayout(new GridBagLayout());
@@ -57,21 +59,38 @@ public class Graphical extends JFrame {
     public void  createGuiBoard(){
 
 
-        // creating the actual board game.
-        this.board  = b.getBoard();
 
         for (int i = 0; i< board.length; i++){
             for(int j = 0; j < board[i].length; j++){
+                System.out.println(board);
 
                 if(board[i][j] != null){
+                    System.out.println(board[i][j].getPawn1());
+                    System.out.println(board[i][j].getPawn2());
+
+
+                    if(board[i][j].getPawn1() != null  || board[i][j].getPawn2() != null){
+                        JPanel tile = new JPanel();
+                        tile.setBackground(Color.BLACK);
+                        tile.setPreferredSize(TileSize);
+                        c.gridx = i; // Helps to specify the x position  of every tile on the frame.
+                        c.gridy = j; // Helps to specify the x position  of every tile on the frame.
+                        c.insets = new Insets(0,2,3,2); // Creates space between the tiles on the frame. 
+                        this.add(tile,c); // adds the tiles "JPanel" to the frame 
+    
+                    }
+                    else{ 
                     JPanel tile = new JPanel();
                     tile.setPreferredSize(TileSize);
                     c.gridx = i; // Helps to specify the x position  of every tile on the frame.
                     c.gridy = j; // Helps to specify the x position  of every tile on the frame.
                     c.insets = new Insets(0,2,3,2); // Creates space between the tiles on the frame. 
                     this.add(tile,c); // adds the tiles "JPanel" to the frame 
+                    }
                     
                 }
+
+                
 
             }
         }
@@ -93,6 +112,17 @@ public class Graphical extends JFrame {
        
 
         return tile;
+    }
+
+    //private void re
+
+    private class TileMaker extends JPanel{
+
+        private  TileMaker(Tile tile){
+
+        }
+
+
     }
     
     

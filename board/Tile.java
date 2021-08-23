@@ -24,7 +24,7 @@ public class Tile {
         this.cost = cost;
         this.name = name;
         this.pawn1 = pawn1;
-        this.pawn2 =pawn2;
+        this.pawn2 = pawn2;
         pawns = new ArrayList<>();
         insertPawns();
 

@@ -48,7 +48,7 @@ public class Pawn {
        
        if(this.board.getTile(pos) != currentTile){
            setLoc(pos);
-           this.board.getTile(pos).placePawn(this);
+           this.board.getTile(pos).placePawn(this,null);
        }
 
 
