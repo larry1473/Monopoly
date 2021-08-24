@@ -13,8 +13,8 @@ public class Main{
         board.SetPawnPostion();
         
         new Graphical();
-        System.out.println(board);
-        System.out.println(board.toString());
+       // System.out.println(board);
+        //System.out.println(board.toString());
 
         for(int i = 0; i< board.getBoard().length; i++){
            for(int j = 0; j < board.getBoard()[i].length; j++){

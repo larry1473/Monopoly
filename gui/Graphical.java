@@ -68,24 +68,15 @@ public class Graphical extends JFrame {
                 if(board[i][j] != null){
                     
 
-                    if(board[i][j].getPawn1() != null  || board[i][j].getPawn2() != null){
-                        JPanel tile = new JPanel();
-                        tile.setBackground(Color.BLACK);
-                        tile.setPreferredSize(TileSize);
-                        c.gridx = i; // Helps to specify the x position  of every tile on the frame.
-                        c.gridy = j; // Helps to specify the x position  of every tile on the frame.
-                        c.insets = new Insets(0,2,3,2); // Creates space between the tiles on the frame. 
-                        this.add(tile,c); // adds the tiles "JPanel" to the frame 
-    
-                    }
-                    else{ 
-                    JPanel tile = new JPanel();
-                    tile.setPreferredSize(TileSize);
+                    //JPanel tile = new JPanel();
+                    TileMaker graphicTile = new TileMaker(board[i][j]); // creates the graphic representation of  a object.
+                    JPanel tile = graphicTile.getTilePanel(); // Getting the graphic tile. 
+                    //tile.setPreferredSize(TileSize);
                     c.gridx = i; // Helps to specify the x position  of every tile on the frame.
                     c.gridy = j; // Helps to specify the x position  of every tile on the frame.
                     c.insets = new Insets(0,2,3,2); // Creates space between the tiles on the frame. 
                     this.add(tile,c); // adds the tiles "JPanel" to the frame 
-                    }
+                    
                     
                 }
 
@@ -129,6 +120,23 @@ public class Graphical extends JFrame {
 
         private  TileMaker(Tile tile){
 
+            if(tile.getPawn1() == null && tile.getPawn2() == null){
+                this.setPreferredSize(TileSize);
+                this.setBackground(Color.white);
+                this.setForeground(Color.white);
+            }
+            else if(tile.getPawns().size() != 0){
+                this.setPreferredSize(TileSize);
+                this.setBackground(Color.blue);
+                this.setForeground(Color.blue);
+
+            }
+
+
+        }
+
+        private JPanel getTilePanel(){
+            return this;
         }
 
 

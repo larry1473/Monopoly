@@ -93,8 +93,17 @@ public class Tile {
     }
 
     public void setPawns(Pawn pawn) {
-        this.pawns.add(pawn);
-        System.out.println(pawns.size());
+        if(this.pawn1 == null){
+            this.pawn1 = pawn;
+            this.pawns.add(pawn);
+
+        }
+        else{
+            this.pawn2 = pawn;
+            this.pawns.add(pawn);
+        }
+        
+        
 
     }
 

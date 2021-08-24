@@ -178,7 +178,6 @@ public class Board {
 
 
     public void SetPawnPostion(){
-        System.out.println(pawns.size());
         for(int i = 0; i < pawns.size(); i++){
             board[10][10].setPawns(pawns.get(i)); 
             
