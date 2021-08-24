@@ -35,6 +35,7 @@ public class Graphical extends JFrame {
         this.b = Board.getInstance();
         this.board = b.getBoard();
         System.out.print(b);
+        //testBoardEmptyness();
         this.setTitle("MONOPOLY");
         c = new GridBagConstraints();
         this.setLayout(new GridBagLayout());
@@ -62,12 +63,10 @@ public class Graphical extends JFrame {
 
         for (int i = 0; i< board.length; i++){
             for(int j = 0; j < board[i].length; j++){
-                System.out.println(board);
+                
 
                 if(board[i][j] != null){
-                    System.out.println(board[i][j].getPawn1());
-                    System.out.println(board[i][j].getPawn2());
-
+                    
 
                     if(board[i][j].getPawn1() != null  || board[i][j].getPawn2() != null){
                         JPanel tile = new JPanel();
@@ -112,6 +111,16 @@ public class Graphical extends JFrame {
        
 
         return tile;
+    }
+
+    public void testBoardEmptyness(){
+        for (int i = 0; i < this.board.length;i++){
+            for(int j = 0; j < board[i].length; j++){
+                if(board[i][j] != null && board[i][j].getPawns().size() != 0 ){
+                    System.out.println("a pawn is prensent on tile "+ i + "" + j);
+                }
+            }
+        }
     }
 
     //private void re
