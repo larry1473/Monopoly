@@ -8,6 +8,7 @@ import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 //import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -118,9 +119,13 @@ public class Graphical extends JFrame {
 
     private class TileMaker extends JPanel{
 
+        private JLabel name;
+
         private  TileMaker(Tile tile){
 
             if(tile.getPawn1() == null && tile.getPawn2() == null){
+                this.name = new JLabel(tile.getName());
+                this.add(name);
                 this.setPreferredSize(TileSize);
                 this.setBackground(Color.white);
                 this.setForeground(Color.white);

@@ -7,9 +7,9 @@ import board.Tile;
  */
 public class Pawn {
 
-    Position loc;
-    String name;
-    Board board;
+    private Position loc;
+    private String name;
+    private Board board;
 
    public Pawn( String name , Position loc){
        this.loc = loc;
