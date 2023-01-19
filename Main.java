@@ -1,5 +1,6 @@
 
 import board.Board;
+import gui.ChoosePawn;
 import gui.Graphical;
 /**
  * @author Larry Fotso
@@ -11,7 +12,7 @@ public class Main{
         Board board = Board.getInstance();
         board.createPawn(2); // Creates the number of wanted pawns.
         board.SetPawnPostion();
-        
+        //ChoosePawn choosePawn = new ChoosePawn();
         new Graphical();
        // System.out.println(board);
         //System.out.println(board.toString());

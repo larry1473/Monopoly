@@ -6,7 +6,9 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 //import java.awt.BorderLayout;
 import java.awt.Insets;
+import java.awt.event.*;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 //import javax.swing.JLabel;
@@ -16,15 +18,18 @@ import board.Board;
 import board.Tile;
 //import board.Utility;
 
-public class Graphical extends JFrame {
+public class Graphical extends JFrame implements ItemListener{
 
     private Tile[][] board;
     private Board b;
-    GridBagConstraints c;
+    private GridBagConstraints c;
     private Dimension TileSize = new Dimension(90, 90);
     //private Dimension basePanelDimension = new Dimension(500, 500);
     private Dimension windowDimension = new Dimension(350, 350);
     private static final long serialVersionUID = 1L;
+    private String name;
+    private String selectedPawn = "";
+    private JComboBox jComboBox; 
 
     /**
      * @author Fotso Larry
@@ -47,7 +52,10 @@ public class Graphical extends JFrame {
         createGuiBoard(); // Creates the board when this class is called.
         this.setLocationRelativeTo(null);
         this.pack();
+        this.selectPawnFrame();
+        this.hasSelectedPawn();
         this.setVisible(true);
+         
         
         
     }
@@ -89,6 +97,14 @@ public class Graphical extends JFrame {
 
     }
 
+    private void hasSelectedPawn(){
+        while (this.selectedPawn.equals(" ")){
+            continue;
+        }
+        
+
+    }
+
     /**
      * Create a tile representation.
      * @return a graphical tile 
@@ -113,6 +129,26 @@ public class Graphical extends JFrame {
                 }
             }
         }
+    }
+
+    
+
+    private JFrame selectPawnFrame(){
+        String[] pawns = {" ","Dog","boat","car"};
+        JFrame frame = new JFrame();
+        JPanel panel = new JPanel();
+        frame.setSize(400,300);
+        JLabel promptMessage = new JLabel("Please select a pawn");
+         jComboBox = new JComboBox<>(pawns);
+        jComboBox.addItemListener(this);
+        panel.add(promptMessage);
+        panel.add(jComboBox);
+        this.selectedPawn =(String) jComboBox.getSelectedItem();
+        frame.add(panel);
+        frame.show();
+        return frame;
+
+
     }
 
     //private void re
@@ -145,6 +181,15 @@ public class Graphical extends JFrame {
         }
 
 
+    }
+
+    @Override
+    public void itemStateChanged(ItemEvent e) {
+        if(e.getSource() == jComboBox){
+            this.selectedPawn = (String) jComboBox.getSelectedItem();
+            System.out.println(this.selectedPawn);
+        }
+        
     }
     
     
