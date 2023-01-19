@@ -13,6 +13,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 //import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.text.AttributeSet.ColorAttribute;
 
 import board.Board;
 import board.Tile;
@@ -23,6 +24,7 @@ public class Graphical extends JFrame implements ItemListener{
     private Tile[][] board;
     private Board b;
     private GridBagConstraints c;
+    private GridBagConstraints c2;
     private Dimension TileSize = new Dimension(90, 90);
     //private Dimension basePanelDimension = new Dimension(500, 500);
     private Dimension windowDimension = new Dimension(150, 150);
@@ -45,6 +47,7 @@ public class Graphical extends JFrame implements ItemListener{
         //testBoardEmptyness();
         this.setTitle("MONOPOLY");
         c = new GridBagConstraints();
+        c2 = new GridBagConstraints();
         this.setLayout(new GridBagLayout());
         this.setSize(windowDimension);
         this.getContentPane().setBackground(Color.gray);
@@ -67,6 +70,7 @@ public class Graphical extends JFrame implements ItemListener{
      *  
      * */ 
     public void  createGuiBoard(){
+        
 
 
 
@@ -90,11 +94,14 @@ public class Graphical extends JFrame implements ItemListener{
                 }
                 else{
                     JPanel tile = new JPanel();
+                    tile.setBackground(Color.ORANGE);
+                    c2.fill = GridBagConstraints.BOTH;
+                    
                     tile.setPreferredSize(TileSize);
-                    c.gridx = i;
-                    c.gridy = j;
-                    c.insets = new Insets(0,0,0,0);
-                    this.add(tile,c);
+                    c2.gridx = i;
+                    c2.gridy = j;
+                    c2.insets = new Insets(0,0,0,0);
+                    this.add(tile,c2);
                 }
 
                 
