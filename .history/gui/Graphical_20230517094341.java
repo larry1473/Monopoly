@@ -167,11 +167,8 @@ public class Graphical extends JFrame implements ItemListener{
     private class TileMaker extends JPanel implements MouseListener{
 
         private JLabel name;
-        private Tile tile;
 
         private  TileMaker(Tile tile){
-            this.tile = tile;
-            addMouseListener(this);
 
             if(tile.getPawn1() == null && tile.getPawn2() == null){
                 this.name = new JLabel(tile.getName());
@@ -186,7 +183,6 @@ public class Graphical extends JFrame implements ItemListener{
                 this.setForeground(Color.blue);
 
             }
-            
 
 
         }
@@ -197,31 +193,32 @@ public class Graphical extends JFrame implements ItemListener{
 
         @Override
         public void mouseClicked(MouseEvent e) {
-        
-           //System.out.println(this.tile.getPos().getX() + " " + this.tile.getPos().getY());
-           //System.out.println(b.getBoard()[this.tile.getPos().getX()][this.tile.getPos().getY()]);
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'mouseClicked'");
         }
 
         @Override
         public void mousePressed(MouseEvent e) {
-            
+            // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'mousePressed'");
         }
 
         @Override
-            public void mouseReleased(MouseEvent e) {
-                
-            }
+        public void mouseReleased(MouseEvent e) {
             // TODO Auto-generated method stub
-            
+            throw new UnsupportedOperationException("Unimplemented method 'mouseReleased'");
+        }
 
         @Override
         public void mouseEntered(MouseEvent e) {
             // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'mouseEntered'");
         }
 
         @Override
         public void mouseExited(MouseEvent e) {
             // TODO Auto-generated method stub
+            throw new UnsupportedOperationException("Unimplemented method 'mouseExited'");
         }
 
        

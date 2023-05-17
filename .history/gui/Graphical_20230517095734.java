@@ -198,8 +198,8 @@ public class Graphical extends JFrame implements ItemListener{
         @Override
         public void mouseClicked(MouseEvent e) {
         
-           //System.out.println(this.tile.getPos().getX() + " " + this.tile.getPos().getY());
-           //System.out.println(b.getBoard()[this.tile.getPos().getX()][this.tile.getPos().getY()]);
+           System.out.println(this.tile.getPos().getX() + " " + this.tile.getPos().getY());
+           System.out.println(bord.);
         }
 
         @Override

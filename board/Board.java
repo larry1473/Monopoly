@@ -14,8 +14,9 @@ import pawn.Position;
 
 public class Board {
 
-    ArrayList<Pawn> pawns = new ArrayList<>();
+    private ArrayList<Pawn> pawns = new ArrayList<>();
     private  Tile[][] board; 
+    private String pawnImage;
     //public static int NUMPawns;
     //private static int  NUMPAWNS;
     public static Board instance;    
@@ -116,6 +117,14 @@ public class Board {
         return board;
     }
 
+    public void setPawnImage(String pawnImage){
+        this.pawnImage = pawnImage;
+    }
+
+    public String getPawnImage(){
+        return this.pawnImage;
+    }
+
     
 
     /**
@@ -187,7 +196,7 @@ public class Board {
 
     public void createPawn(int num){
         for(int i = 0; i < num; i++){
-            Pawn p = new Pawn("dog",new Position(10, 10));
+            Pawn p = new Pawn("dog",new Position(10, 10),this.pawnImage);
             pawns.add(p);
         }
     }

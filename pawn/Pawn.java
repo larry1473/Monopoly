@@ -10,8 +10,10 @@ public class Pawn {
     private Position loc;
     private String name;
     private Board board;
+    private final String image;
 
-   public Pawn( String name , Position loc){
+   public Pawn( String name , Position loc, String image){
+       this.image = image;
        this.loc = loc;
        this.name = name;
        this.board = new Board();
@@ -28,6 +30,10 @@ public class Pawn {
    public void setLoc(Position loc) {
        this.loc = loc;
    }
+
+  public String getImage(){
+    return this.image;
+  }
 
 
    /**

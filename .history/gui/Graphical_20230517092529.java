@@ -25,7 +25,7 @@ public class Graphical extends JFrame implements ItemListener{
     private Board b;
     private GridBagConstraints c;
     private GridBagConstraints c2;
-    private Dimension TileSize = new Dimension(55, 55);
+    private Dimension TileSize = new Dimension(, 50);
     //private Dimension basePanelDimension = new Dimension(500, 500);
     private Dimension windowDimension = new Dimension(100, 100);
     private static final long serialVersionUID = 1L;
@@ -164,14 +164,11 @@ public class Graphical extends JFrame implements ItemListener{
 
     //private void re
 
-    private class TileMaker extends JPanel implements MouseListener{
+    private class TileMaker extends JPanel{
 
         private JLabel name;
-        private Tile tile;
 
         private  TileMaker(Tile tile){
-            this.tile = tile;
-            addMouseListener(this);
 
             if(tile.getPawn1() == null && tile.getPawn2() == null){
                 this.name = new JLabel(tile.getName());
@@ -186,7 +183,6 @@ public class Graphical extends JFrame implements ItemListener{
                 this.setForeground(Color.blue);
 
             }
-            
 
 
         }
@@ -194,37 +190,6 @@ public class Graphical extends JFrame implements ItemListener{
         private JPanel getTilePanel(){
             return this;
         }
-
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        
-           //System.out.println(this.tile.getPos().getX() + " " + this.tile.getPos().getY());
-           //System.out.println(b.getBoard()[this.tile.getPos().getX()][this.tile.getPos().getY()]);
-        }
-
-        @Override
-        public void mousePressed(MouseEvent e) {
-            
-        }
-
-        @Override
-            public void mouseReleased(MouseEvent e) {
-                
-            }
-            // TODO Auto-generated method stub
-            
-
-        @Override
-        public void mouseEntered(MouseEvent e) {
-            // TODO Auto-generated method stub
-        }
-
-        @Override
-        public void mouseExited(MouseEvent e) {
-            // TODO Auto-generated method stub
-        }
-
-       
 
 
     }
